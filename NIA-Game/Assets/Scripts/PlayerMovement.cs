@@ -5,17 +5,27 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController2D controller;
+
+    public float runSpeed = 40f;
     
-    public float speed;
+    float horizontalMove = 0f;
+    
+    bool jump = false;
 
-
-    void Start()
-    {
-
-    }
 
     void Update()
     {
-        Input.GetAxisRaw("Horizontal");
+       horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+
+       if (Input.GetButtonDown("Jump"))
+       {
+            jump = true;
+       }
+    }
+
+    void FixedUpdate()
+    {
+        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        jump = false;
     }
 }
