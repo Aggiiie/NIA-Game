@@ -46,6 +46,12 @@ TagManager:
   - name: BackGround
     uniqueID: 2177310257
     locked: 0
+  - name: BackGround2
+    uniqueID: 2361945251
+    locked: 0
+  - name: BackGround3
+    uniqueID: 3631993293
+    locked: 0
   - name: ForeGround
     uniqueID: 3445881791
     locked: 0
